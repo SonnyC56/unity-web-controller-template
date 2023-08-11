@@ -52,6 +52,8 @@ This script handles the connection with the WebSocket at the start of the Unity 
 
 Now all you have to do is replace the 3d assets and game logic. You can also edit the keyframes of the secondary camera animation.
 
+You can hit __Tab__ inside of the running Unity application to open a menu that lets you exit the game and change both the look and movement sensitivity. Tap __Tab__ again to close this menu.
+
 If you are curious about how the unity scripts work, you can find them in this repo and make edits to them as you need. 
 
 ## Adding functionality between the unity client and web client
