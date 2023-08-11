@@ -8,10 +8,10 @@ In order to get this working, you are going to have to have your own web server 
 
 I used a Digital Ocean Ubuntu droplet configured with node.js and Nginx as a reverse proxy. You can learn how to do this here - https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-20-04
 
-Once you have a droplet, clone this repo onto it in the root folder. Configure PM2 to run main.js in the backend directory on start-up. 
+Once you have a droplet, clone this repo onto it in the root folder. Follow the guide above to install node.js and nginx. Configure PM2 to run main.js in the backend directory on start-up. 
 You will then need to build the frontend part of the app using npm run build -- but before we do this we need to update the IP address in the code.
 
-Open your cloned repo and replace all instances of IP-ADDRESS (There is a case of it in Admin.js, Controller.js, and Profile.js) with the reserved IP from your own digital ocean droplet. 
+Open your cloned repo and __replace all instances of IP-ADDRESS__ (There is a case of it in Admin.js, Controller.js, and Profile.js, all parts of the frontend codebase) with the reserved IP from your own digital ocean droplet. 
 Once this is done you can pull the updates on the droplet and npm run build the frontend directory of the application.
 
 You will then need to make sure your Nginx config is correct. 
