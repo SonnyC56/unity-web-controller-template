@@ -1,7 +1,7 @@
 import useWebSocket from 'react-use-websocket';
 import styled from 'styled-components';
 import Logo from "./images/LW-InteractIVE_BLK-BG_LOGO.png";
-const ADMIN_WS_URL = 'ws://146.190.0.173/api/profile';
+const ADMIN_WS_URL = 'ws://IP-ADDRESS/api/profile';
 
 const AppContainer = styled.div`
   display: flex;

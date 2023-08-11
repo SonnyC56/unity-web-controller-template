@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
 import "./App.css";
 
-const ADMIN_WS_URL = "ws://146.190.0.173/api/admin";
+const ADMIN_WS_URL = "ws://IP-ADDRESS/api/admin";
 
 function Admin() {
   const [controlQueue, setControlQueue] = useState({

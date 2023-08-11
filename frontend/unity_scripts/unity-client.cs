@@ -62,7 +62,7 @@ public class WebsocketClient : MonoBehaviour
     private void Start()
     {
         hasNewDataSinceLastUpdate = false;
-        ws = new WebSocket("ws://146.190.0.173/api/unity");
+        ws = new WebSocket("ws://IP-ADDRESS/api/unity");
         ws.Connect();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
 
@@ -75,7 +75,7 @@ public class WebsocketClient : MonoBehaviour
             if (qrCodeGenerator != null)
             {
                 Debug.Log("ENCONDING QR CODE");
-                qrCodeGenerator.EncodeQRCode("http://146.190.0.173/");
+                qrCodeGenerator.EncodeQRCode("http://IP-ADDRESS/");
             }
             else
             {
@@ -223,7 +223,7 @@ if (hasNewDataSinceLastUpdate){
     private void Reconnect()
     {
         Debug.Log("Reconnecting to WebSocket server...");
-        ws = new WebSocket("ws://146.190.0.173/api/unity");
+        ws = new WebSocket("ws://IP-ADDRESS/api/unity");
         ws.Connect();
 
          ws.OnClose += (sender, e) =>

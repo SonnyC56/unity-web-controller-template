@@ -11,7 +11,7 @@ I used a Digital Ocean Ubuntu droplet configured with node.js and Nginx as a rev
 Once you have a droplet, clone this repo onto it in the root folder. Configure PM2 to run main.js in the backend directory on start-up. 
 You will then need to build the frontend part of the app using npm run build -- but before we do this we need to update the IP address in the code.
 
-Open your cloned repo and replace 146.192.0.173 (There is a case of it in Admin.js, Controller.js, and Profile.js) with the reserved IP from your own digital ocean droplet. 
+Open your cloned repo and replace all instances of IP-ADDRESS (There is a case of it in Admin.js, Controller.js, and Profile.js) with the reserved IP from your own digital ocean droplet. 
 Once this is done you can pull the updates on the droplet and npm run build the frontend directory of the application.
 
 You will then need to make sure your Nginx config is correct. 
@@ -19,7 +19,7 @@ This is what mine looks like - it is in this directory - /etc/nginx/sites-availa
 
     server {
       listen 80;
-      server_name 146.190.0.173;  # Replace with your domain or IP address
+      server_name IP-ADDRESS;  # Replace with your domain or IP address
     
       root /root/unity-web-controller/frontend/build;
       index index.html;
@@ -44,7 +44,7 @@ Once this is configured correctly, restart nginx and restart your droplet. When 
 Download the Unity template project [here](https://drive.google.com/drive/folders/1iXt_OE-VkC8c1LNEu5RuxSQRRvn_JnpD?usp=drive_link).
 This project is set up with the necessary dependencies to connect to a WebSocket and has the scripts pre-applied and game objects needed to be added to Unity. 
 
-You will need to replace the IP Address (it is in there 3 times) in the unity-client.cs/WebsocketClient.cs script in this repo with the IP address of your web server.
+You will need to replace IP-ADDRESS (it is in there 3 times) in the unity-client.cs/WebsocketClient.cs script in this repo with the IP address of your web server.
 
 The script is named WebsocketClient.cs in Unity and it is named unity-client.cs in this git repo. Make the change first in the git repo in a code editor of your choice. Commit this to git, then copy the entire script. Open your newly downloaded Unity project, double-click on the WebsocketClient.cs script inside of the scripts folder, and replace this entire script with the one you just copied. Or just make the same changes here as you did for the git repo, it doesn't matter. Just make sure you have the correct IP address in the script inside of the Unity project.
 

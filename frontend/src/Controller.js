@@ -10,7 +10,7 @@ import MoveArrows from "./images/Move_Arrows-BG.png";
 import LookEyeBG from "./images/Look_Eye-BG.png";
 import ExitImage from "./images/Exit_Button.png";
 import Logo from "./images/LW-InteractIVE_BLK-BG_LOGO.png";
-const USER_WS_URL = "ws://146.190.0.173/api/user";
+const USER_WS_URL = "ws://IP-ADDRESS/api/user";
 
 function Controller() {
   const [hasControl, setHasControl] = useState(false);
