@@ -84,14 +84,34 @@ function Controller() {
 
   const handleMove = (data) => {
     if (hasControl) {
+     // console.log("sending move data", data);
       sendJsonMessage(data);
     }
   };
   const handleRotate = (data) => {
     if (hasControl) {
+   //   console.log("sending rotate data", data);
       data.type = "rotate";
       sendJsonMessage(data);
     }
+  };
+  const handleStopRotate = (data) => {
+    if (hasControl) {
+    //  console.log("sending stop rotate data", data);
+      data.x = 0;
+      data.y = 0;
+      data.type = "rotate";
+      sendJsonMessage(data);
+    }
+  };
+    const handleStopMove = (data) => {
+      if (hasControl) {
+      //  console.log("sending stop rotate data", data);
+        data.x = 0;
+        data.y = 0;
+        data.type = "move";
+        sendJsonMessage(data);
+      }
   };
   const handleDone = () => {
     if (hasControl) {
@@ -151,6 +171,7 @@ function Controller() {
                     stickImage={MoveStick}
                     baseImage={MoveArrows}
                     move={handleMove}
+                    stop={handleStopMove}
                   />
                 </div>
                 <div>
@@ -162,6 +183,7 @@ function Controller() {
                     baseImage={LookEyeBG}
                     stickColor="orange"
                     move={handleRotate}
+                    stop={handleStopRotate}
                   />
                 </div>
               </div>

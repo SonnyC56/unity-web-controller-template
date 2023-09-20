@@ -153,31 +153,14 @@ if (hasNewDataSinceLastUpdate){
     // Smooth the movement over time
     currentSpeed = Vector2.SmoothDamp(currentSpeed, targetSpeed, ref currentVelocity, smoothTime);
     // Set the movement values in the StarterAssetsInputs component
-    starterAssetsInputs.move = new Vector2(currentSpeed.x , currentSpeed.y);
+    if(x == 0 && y == 0){
+            starterAssetsInputs.move = new Vector2(0 , 0);
+    } else {
+             starterAssetsInputs.move = new Vector2(currentSpeed.x , currentSpeed.y);
+    }
     starterAssetsInputs.look = targetRotation;
     hasNewDataSinceLastUpdate = false;
-} else {
-
-    // Reset the movement values
-    x = 0;
-    y = 0;
-    xRotate = 0;
-    yRotate = 0;
-
-    // Use x and y to set the target direction for the movement and rotation
-    targetDirection = new Vector2(x, y).normalized;
-    targetRotation = new Vector2(xRotate / 2 , yRotate * -1 / 2);
-    // Apply acceleration to the target speed
-    targetSpeed = targetDirection * distance * acceleration;
-    // Smooth the movement over time
-    currentSpeed = Vector2.SmoothDamp(currentSpeed, targetSpeed, ref currentVelocity, smoothTime);
-    // Smoothly interpolate between the current rotation and the target rotation
-    currentRotation = Vector2.Lerp(currentRotation, targetRotation, smoothTime);
-    // Set the movement values in the StarterAssetsInputs component
-    starterAssetsInputs.move = new Vector2(currentSpeed.x , currentSpeed.y);
-    // Set the rotation of the camera to the current rotation
-    starterAssetsInputs.look = currentRotation;
-}
+} 
    
     if(hasUser){
         qrCodeImage.enabled = false;
